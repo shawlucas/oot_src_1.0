@@ -1,8 +1,60 @@
-glabel func_8000063C
+.include "macro.inc"
+
+# assembler directives
+.set noat      # allow manual use of $at
+.set noreorder # don't insert nops after branches
+.set gp=64     # allow use of 64-bit general purposee registers
+
+.align 4
+
+.section .text
+
+glabel Main_ThreadEntry
+/* 00140 800005A0 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
+/* 00144 800005A4 AFBF0014 */  sw      $ra, 0x0014($sp)
+/* 00148 800005A8 AFA40020 */  sw      $a0, 0x0020($sp)
+/* 0014C 800005AC 0C00039B */  jal     DmaMgr_Start
+/* 00150 800005B0 00000000 */  nop
+/* 00154 800005B4 0C001230 */  jal     osGetTime              ## osGetTime
+/* 00158 800005B8 00000000 */  nop
+/* 0015C 800005BC 3C0700A8 */  lui     $a3, 0x00A8                ## $a3 = 00A80000
+/* 00160 800005C0 3C0E00B9 */  lui     $t6, 0x00B9                ## $t6 = 00B90000
+/* 00164 800005C4 24E57000 */  addiu   $a1, $a3, 0x7000           ## $a1 = 00A87000
+/* 00168 800005C8 25CEAD30 */  addiu   $t6, $t6, 0xAD30           ## $t6 = 00B8AD30
+/* 0016C 800005CC 3C048001 */  lui     $a0, 0x8001                ## $a0 = 80010000
+/* 00170 800005D0 AFA20018 */  sw      $v0, 0x0018($sp)
+/* 00174 800005D4 AFA3001C */  sw      $v1, 0x001C($sp)
+/* 00178 800005D8 248410A0 */  addiu   $a0, $a0, 0x10A0           ## $a0 = 800110A0
+/* 0017C 800005DC 0C00037C */  jal     DmaMgr_SendRequest0
+/* 00180 800005E0 01C53023 */  subu    $a2, $t6, $a1
+/* 00184 800005E4 0C001230 */  jal     osGetTime              ## osGetTime
+/* 00188 800005E8 00000000 */  nop
+/* 0018C 800005EC 8FB80018 */  lw      $t8, 0x0018($sp)
+/* 00190 800005F0 8FB9001C */  lw      $t9, 0x001C($sp)
+/* 00194 800005F4 3C048011 */  lui     $a0, 0x8011                ## $a0 = 80110000
+/* 00198 800005F8 3C0F8013 */  lui     $t7, 0x8013                ## $t7 = 80130000
+/* 0019C 800005FC 03024023 */  subu    $t0, $t8, $v0
+/* 001A0 80000600 0323082B */  sltu    $at, $t9, $v1
+/* 001A4 80000604 01014023 */  subu    $t0, $t0, $at
+/* 001A8 80000608 24844DD0 */  addiu   $a0, $a0, 0x4DD0           ## $a0 = 80114DD0
+/* 001AC 8000060C 25EFBE30 */  addiu   $t7, $t7, 0xBE30           ## $t7 = 8012BE30
+/* 001B0 80000610 03234823 */  subu    $t1, $t9, $v1
+/* 001B4 80000614 AFA9001C */  sw      $t1, 0x001C($sp)
+/* 001B8 80000618 AFA80018 */  sw      $t0, 0x0018($sp)
+/* 001BC 8000061C 0C000BA0 */  jal     bzero              ## bzero
+/* 001C0 80000620 01E42823 */  subu    $a1, $t7, $a0
+/* 001C4 80000624 0C028714 */  jal     Main
+/* 001C8 80000628 8FA40020 */  lw      $a0, 0x0020($sp)
+/* 001CC 8000062C 8FBF0014 */  lw      $ra, 0x0014($sp)
+/* 001D0 80000630 27BD0020 */  addiu   $sp, $sp, 0x0020           ## $sp = 00000000
+/* 001D4 80000634 03E00008 */  jr      $ra
+/* 001D8 80000638 00000000 */  nop
+
+glabel Idle_ThreadEntry
 /* 001DC 8000063C 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 001E0 80000640 AFBF001C */  sw      $ra, 0x001C($sp)
 /* 001E4 80000644 AFA40020 */  sw      $a0, 0x0020($sp)
-/* 001E8 80000648 0C0016E8 */  jal     func_80005BA0
+/* 001E8 80000648 0C0016E8 */  jal     osCreateViManager
 /* 001EC 8000064C 240400FE */  addiu   $a0, $zero, 0x00FE         ## $a0 = 000000FE
 /* 001F0 80000650 3C028000 */  lui     $v0, 0x8000                ## $v0 = 80000000
 /* 001F4 80000654 8C420300 */  lw      $v0, 0x0300($v0)           ## 80000300
@@ -62,7 +114,7 @@ glabel func_8000063C
 /* 002BC 8000071C AD6E0000 */  sw      $t6, 0x0000($t3)           ## 80007CDC
 /* 002C0 80000720 AD6D0004 */  sw      $t5, 0x0004($t3)           ## 80007CE0
 .L80000724:
-/* 002C4 80000724 0C000F58 */  jal     func_80003D60
+/* 002C4 80000724 0C000F58 */  jal     osViSetMode
 /* 002C8 80000728 24847CD0 */  addiu   $a0, $a0, 0x7CD0           ## $a0 = 80007CD0
 /* 002CC 8000072C 0C000EF8 */  jal     func_80003BE0
 /* 002D0 80000730 24040001 */  addiu   $a0, $zero, 0x0001         ## $a0 = 00000001
@@ -71,7 +123,7 @@ glabel func_8000063C
 /* 002DC 8000073C 24C67BF0 */  addiu   $a2, $a2, 0x7BF0           ## $a2 = 80007BF0
 /* 002E0 80000740 24A57CB8 */  addiu   $a1, $a1, 0x7CB8           ## $a1 = 80007CB8
 /* 002E4 80000744 24040096 */  addiu   $a0, $zero, 0x0096         ## $a0 = 00000096
-/* 002E8 80000748 0C000D40 */  jal     func_80003500
+/* 002E8 80000748 0C000D40 */  jal     osCreatePiManager
 /* 002EC 8000074C 24070032 */  addiu   $a3, $zero, 0x0032         ## $a3 = 00000032
 /* 002F0 80000750 3C0F8000 */  lui     $t7, 0x8000                ## $t7 = 80000000
 /* 002F4 80000754 25EF6560 */  addiu   $t7, $t7, 0x6560           ## $t7 = 80006560
@@ -84,7 +136,7 @@ glabel func_8000063C
 /* 00310 80000770 24A573D0 */  addiu   $a1, $a1, 0x73D0           ## $a1 = 800073D0
 /* 00314 80000774 24847BD0 */  addiu   $a0, $a0, 0x7BD0           ## $a0 = 80007BD0
 /* 00318 80000778 AFAF0014 */  sw      $t7, 0x0014($sp)
-/* 0031C 8000077C 0C000624 */  jal     func_80001890
+/* 0031C 8000077C 0C000624 */  jal     StackCheck_Init
 /* 00320 80000780 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 00324 80000784 3C198000 */  lui     $t9, 0x8000                ## $t9 = 80000000
 /* 00328 80000788 27397BD0 */  addiu   $t9, $t9, 0x7BD0           ## $t9 = 80007BD0
@@ -96,13 +148,13 @@ glabel func_8000063C
 /* 00340 800007A0 24847220 */  addiu   $a0, $a0, 0x7220           ## $a0 = 80007220
 /* 00344 800007A4 AFB90010 */  sw      $t9, 0x0010($sp)
 /* 00348 800007A8 24050003 */  addiu   $a1, $zero, 0x0003         ## $a1 = 00000003
-/* 0034C 800007AC 0C000BC8 */  jal     func_80002F20              ## osCreateThread
+/* 0034C 800007AC 0C000BC8 */  jal     osCreateThread              ## osCreateThread
 /* 00350 800007B0 8FA70020 */  lw      $a3, 0x0020($sp)
 /* 00354 800007B4 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
-/* 00358 800007B8 0C0017B0 */  jal     func_80005EC0              ## osStartThread
+/* 00358 800007B8 0C0017B0 */  jal     osStartThread              ## osStartThread
 /* 0035C 800007BC 24847220 */  addiu   $a0, $a0, 0x7220           ## $a0 = 80007220
 /* 00360 800007C0 00002025 */  or      $a0, $zero, $zero          ## $a0 = 00000000
-/* 00364 800007C4 0C001120 */  jal     func_80004480              ## osSetThreadPri
+/* 00364 800007C4 0C001120 */  jal     osSetThreadPri              ## osSetThreadPri
 /* 00368 800007C8 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 .L800007CC:
 /* 0036C 800007CC 1000FFFF */  beq     $zero, $zero, .L800007CC
@@ -114,5 +166,3 @@ glabel func_8000063C
 /* 00384 800007E4 00000000 */  nop
 /* 00388 800007E8 00000000 */  nop
 /* 0038C 800007EC 00000000 */  nop
-
-

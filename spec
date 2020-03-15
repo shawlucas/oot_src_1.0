@@ -5,7 +5,11 @@ beginseg
 endseg
 beginseg
      name "boot"
-     include "build/baserom/boot.o"
+     include "build/asm/boot/boot_main.o"
+     include "build/asm/boot/idle.o"
+     include "build/asm/boot/z_std_dma.o"
+     include "build/asm/boot/yaz0.o"
+     include "build/asm/boot/boot.o"
      address 0x80000460
 endseg
 beginseg

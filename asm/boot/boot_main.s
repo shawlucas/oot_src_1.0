@@ -1,4 +1,31 @@
-glabel func_80000498
+.include "macro.inc"
+
+# assembler directives
+.set noat      # allow manual use of $at
+.set noreorder # don't insert nops after branches
+.set gp=64     # allow use of 64-bit general purposee registers
+
+.align 4
+
+.section .text
+
+glabel cleararena
+/* 00000 80000460 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
+/* 00004 80000464 AFBF0014 */  sw      $ra, 0x0014($sp)
+/* 00008 80000468 3C0E8000 */  lui     $t6, 0x8000                ## $t6 = 80000000
+/* 0000C 8000046C 8DCE0318 */  lw      $t6, 0x0318($t6)           ## 80000318
+/* 00010 80000470 3C0F0001 */  lui     $t7, 0x0001                ## $t7 = 00010000
+/* 00014 80000474 25EFB140 */  addiu   $t7, $t7, 0xB140           ## $t7 = 0000B140
+/* 00018 80000478 3C048001 */  lui     $a0, 0x8001                ## $a0 = 80010000
+/* 0001C 8000047C 2484B140 */  addiu   $a0, $a0, 0xB140           ## $a0 = 8000B140
+/* 00020 80000480 0C000BA0 */  jal     bzero                      ## bzero
+/* 00024 80000484 01CF2823 */  subu    $a1, $t6, $t7
+/* 00028 80000488 8FBF0014 */  lw      $ra, 0x0014($sp)
+/* 0002C 8000048C 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000
+/* 00030 80000490 03E00008 */  jr      $ra
+/* 00034 80000494 00000000 */  nop
+
+glabel bootproc
 /* 00038 80000498 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 0003C 8000049C AFBF001C */  sw      $ra, 0x001C($sp)
 /* 00040 800004A0 3C0F8000 */  lui     $t7, 0x8000                ## $t7 = 80000000
@@ -12,23 +39,23 @@ glabel func_80000498
 /* 00060 800004C0 24A56E20 */  addiu   $a1, $a1, 0x6E20           ## $a1 = 80006E20
 /* 00064 800004C4 24846830 */  addiu   $a0, $a0, 0x6830           ## $a0 = 80006830
 /* 00068 800004C8 AFAF0014 */  sw      $t7, 0x0014($sp)
-/* 0006C 800004CC 0C000624 */  jal     func_80001890
+  /* 0006C 800004CC 0C000624 */  jal     StackCheck_Init
 /* 00070 800004D0 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
-/* 00074 800004D4 0C000FA4 */  jal     func_80003E90
+/* 00074 800004D4 0C000FA4 */  jal     osGetMemSize
 /* 00078 800004D8 00000000 */  nop
 /* 0007C 800004DC 3C018000 */  lui     $at, 0x8000                ## $at = 80000000
 /* 00080 800004E0 0C00055C */  jal     func_80001570
 /* 00084 800004E4 AC220318 */  sw      $v0, 0x0318($at)           ## 80000318
-/* 00088 800004E8 0C000118 */  jal     func_80000460
+/* 00088 800004E8 0C000118 */  jal     cleararena
 /* 0008C 800004EC 00000000 */  nop
-/* 00090 800004F0 0C000C1C */  jal     func_80003070
+/* 00090 800004F0 0C000C1C */  jal     __osInitialize_Common
 /* 00094 800004F4 00000000 */  nop
-/* 00098 800004F8 0C0015A0 */  jal     func_80005680
+/* 00098 800004F8 0C0015A0 */  jal     osCartRomInit
 /* 0009C 800004FC 00000000 */  nop
 /* 000A0 80000500 3C018000 */  lui     $at, 0x8000                ## $at = 80000000
-/* 000A4 80000504 0C000580 */  jal     func_80001600
+/* 000A4 80000504 0C000580 */  jal     osDriveRomInit
 /* 000A8 80000508 AC226260 */  sw      $v0, 0x6260($at)           ## 80006260
-/* 000AC 8000050C 0C0004A8 */  jal     func_800012A0
+/* 000AC 8000050C 0C0004A8 */  jal     Locale_Init
 /* 000B0 80000510 00000000 */  nop
 /* 000B4 80000514 3C198000 */  lui     $t9, 0x8000                ## $t9 = 80000000
 /* 000B8 80000518 27396558 */  addiu   $t9, $t9, 0x6558           ## $t9 = 80006558
@@ -41,7 +68,7 @@ glabel func_80000498
 /* 000D4 80000534 24A56A00 */  addiu   $a1, $a1, 0x6A00           ## $a1 = 80006A00
 /* 000D8 80000538 24846E00 */  addiu   $a0, $a0, 0x6E00           ## $a0 = 80006E00
 /* 000DC 8000053C AFB90014 */  sw      $t9, 0x0014($sp)
-/* 000E0 80000540 0C000624 */  jal     func_80001890
+/* 000E0 80000540 0C000624 */  jal     StackCheck_Init
 /* 000E4 80000544 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 000E8 80000548 3C088000 */  lui     $t0, 0x8000                ## $t0 = 80000000
 /* 000EC 8000054C 25086E00 */  addiu   $t0, $t0, 0x6E00           ## $t0 = 80006E00
@@ -53,10 +80,10 @@ glabel func_80000498
 /* 00104 80000564 24846850 */  addiu   $a0, $a0, 0x6850           ## $a0 = 80006850
 /* 00108 80000568 AFA80010 */  sw      $t0, 0x0010($sp)
 /* 0010C 8000056C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
-/* 00110 80000570 0C000BC8 */  jal     func_80002F20              ## osCreateThread
+/* 00110 80000570 0C000BC8 */  jal     osCreateThread              ## osCreateThread
 /* 00114 80000574 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 00118 80000578 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
-/* 0011C 8000057C 0C0017B0 */  jal     func_80005EC0              ## osStartThread
+/* 0011C 8000057C 0C0017B0 */  jal     osStartThread              ## osStartThread
 /* 00120 80000580 24846850 */  addiu   $a0, $a0, 0x6850           ## $a0 = 80006850
 /* 00124 80000584 8FBF001C */  lw      $ra, 0x001C($sp)
 /* 00128 80000588 27BD0020 */  addiu   $sp, $sp, 0x0020           ## $sp = 00000000
@@ -65,5 +92,3 @@ glabel func_80000498
 /* 00134 80000594 00000000 */  nop
 /* 00138 80000598 00000000 */  nop
 /* 0013C 8000059C 00000000 */  nop
-
-
