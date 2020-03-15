@@ -17,7 +17,7 @@ glabel osSendMesg
 /* 019D0 80001E30 AFA60040 */  sw      $a2, 0x0040($sp)
 /* 019D4 80001E34 AFB20020 */  sw      $s2, 0x0020($sp)
 /* 019D8 80001E38 AFB1001C */  sw      $s1, 0x001C($sp)
-/* 019DC 80001E3C 0C00144C */  jal     __osResetGlobalIntMask              ## __osResetGlobalIntMask
+/* 019DC 80001E3C 0C00144C */  jal     __osDisableInt
 /* 019E0 80001E40 AFB00018 */  sw      $s0, 0x0018($sp)
 /* 019E4 80001E44 8FAE0038 */  lw      $t6, 0x0038($sp)
 /* 019E8 80001E48 00408025 */  or      $s0, $v0, $zero            ## $s0 = 00000000
@@ -85,7 +85,7 @@ glabel osSendMesg
 /* 01AC8 80001F28 8F2D0000 */  lw      $t5, 0x0000($t9)           ## 00000000
 /* 01ACC 80001F2C 11A00006 */  beq     $t5, $zero, .L80001F48
 /* 01AD0 80001F30 00000000 */  nop
-/* 01AD4 80001F34 0C000AE5 */  jal     func_80002B94
+/* 01AD4 80001F34 0C000AE5 */  jal     __osPopThread
 /* 01AD8 80001F38 03002025 */  or      $a0, $t8, $zero            ## $a0 = 00000000
 /* 01ADC 80001F3C 00409025 */  or      $s2, $v0, $zero            ## $s2 = 00000000
 /* 01AE0 80001F40 0C0017B0 */  jal     osStartThread              ## osStartThread

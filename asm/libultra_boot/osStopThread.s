@@ -15,7 +15,7 @@ glabel osStopThread
 /* 01B18 80001F78 AFA40038 */  sw      $a0, 0x0038($sp)
 /* 01B1C 80001F7C AFB20020 */  sw      $s2, 0x0020($sp)
 /* 01B20 80001F80 AFB1001C */  sw      $s1, 0x001C($sp)
-/* 01B24 80001F84 0C00144C */  jal     __osResetGlobalIntMask              ## __osResetGlobalIntMask
+/* 01B24 80001F84 0C00144C */  jal     __osDisableInt              ## __osDisableInt
 /* 01B28 80001F88 AFB00018 */  sw      $s0, 0x0018($sp)
 /* 01B2C 80001F8C 8FAE0038 */  lw      $t6, 0x0038($sp)
 /* 01B30 80001F90 00408025 */  or      $s0, $v0, $zero            ## $s0 = 00000000

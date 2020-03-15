@@ -114,7 +114,7 @@ glabel osDriveRomInit
 /* 01328 80001788 000AC880 */  sll     $t9, $t2,  2
 /* 0132C 8000178C 00796021 */  addu    $t4, $v1, $t9
 /* 01330 80001790 8D8E0000 */  lw      $t6, 0x0000($t4)           ## A0000000
-/* 01334 80001794 0C00144C */  jal     __osResetGlobalIntMask              ## __osResetGlobalIntMask
+/* 01334 80001794 0C00144C */  jal     __osDisableInt             ## __osResetGlobalIntMask
 /* 01338 80001798 A1CF0008 */  sb      $t7, 0x0008($t6)           ## 00000008
 /* 0133C 8000179C 3C038000 */  lui     $v1, 0x8000                ## $v1 = 80000000
 /* 01340 800017A0 2463638C */  addiu   $v1, $v1, 0x638C           ## $v1 = 8000638C
