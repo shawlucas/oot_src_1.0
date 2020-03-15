@@ -7076,3 +7076,8 @@ beginseg
      romalign 0x1000
      include "build/baserom/softsprite_matrix_static.o"
 endseg
+beginseg
+    name "pad"
+    romalign 0x1000
+    include "build/asm/pad/pad.o"
+endseg

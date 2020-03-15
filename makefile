@@ -61,7 +61,7 @@ SPEC := spec
 include baserom_files.mk
 
 SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers
-ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/overlays asm/overlays/actors
+ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/overlays asm/overlays/actors asm/pad
 
 #include overlays.mk
 #include overlays_asm.mk
@@ -127,6 +127,9 @@ build/ldscript.txt: $(SPEC)
 build/undefined_syms.txt: undefined_syms.txt
 	$(CPP) -P $< > build/undefined_syms.txt
 
+build/fill.txt: fill.txt
+		$(CPP) -P $< > build/fill.txt
+
 clean:
 	$(RM) $(ROM) $(ELF) -r build
 
@@ -135,6 +138,8 @@ clean:
 
 build/baserom/%.o: baserom/%
 	$(OBJCOPY) -I binary -O elf32-big $< $@
+
+
 
 build/asm/%.o: asm/%.s
 	$(AS) $(ASFLAGS) $^ -o $@
