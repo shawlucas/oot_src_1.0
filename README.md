@@ -1,9 +1,12 @@
 Legend of Zelda: Ocarina of Time NTSC 1.0
 
-run make -C tools
+Put a decompressed Ocarina of Time 1.0 ROM in the folder, named "baserom.z64"
 
-run python3 extract_baserom.py
+Run make -C tools
 
-then run make
+Run python3 extract_baserom.py
 
-right now it just copies files with objcopy lol
+Then run make
+
+It builds the following ROM:
+* zelda_ocarina_NTSC `md5: a6090ade6efb0490f5e74838d47bbfac`
