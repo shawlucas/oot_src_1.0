@@ -9,6 +9,15 @@ beginseg
      include "build/asm/boot/idle.o"
      include "build/asm/boot/z_std_dma.o"
      include "build/asm/boot/yaz0.o"
+     include "build/asm/boot/z_locale.o"
+     include "build/asm/boot/boot_800015A0.o"
+     include "build/asm/libultra_boot/osDriveRomInit.o"
+     include "build/asm/boot/yaz0_old.o"
+     include "build/asm/boot/stackcheck.o"
+     include "build/asm/boot/logutils.o"
+     include "build/asm/libultra_boot/piacs.o"
+     include "build/asm/libultra_boot/osSendMesg.o"
+     include "build/asm/libultra_boot/osStopThread.o"
      include "build/asm/boot/boot.o"
      address 0x80000460
 endseg

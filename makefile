@@ -61,7 +61,7 @@ SPEC := spec
 include baserom_files.mk
 
 SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers
-ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/boot asm/overlays asm/overlays/actors asm/pad
+ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/boot asm/libultra_boot asm/overlays asm/overlays/actors asm/pad
 
 #include overlays.mk
 #include overlays_asm.mk
