@@ -92,7 +92,7 @@ glabel DmaMgr_DMARomToRam
 /* 004A0 80000900 AFB00080 */  sw      $s0, 0x0080($sp)
 /* 004A4 80000904 8EE40000 */  lw      $a0, 0x0000($s7)           ## 80006260
 /* 004A8 80000908 03C02825 */  or      $a1, $s8, $zero            ## $a1 = FFFFFFE8
-/* 004AC 8000090C 0C001030 */  jal     osEPiStartDMA
+/* 004AC 8000090C 0C001030 */  jal     osEPiStartDma
 /* 004B0 80000910 00003025 */  or      $a2, $zero, $zero          ## $a2 = 00000000
 /* 004B4 80000914 1440001E */  bne     $v0, $zero, .L80000990
 /* 004B8 80000918 00401825 */  or      $v1, $v0, $zero            ## $v1 = 00000000
@@ -116,7 +116,7 @@ glabel DmaMgr_DMARomToRam
 /* 004FC 8000095C AFB30080 */  sw      $s3, 0x0080($sp)
 /* 00500 80000960 8EE40000 */  lw      $a0, 0x0000($s7)           ## 80006260
 /* 00504 80000964 03C02825 */  or      $a1, $s8, $zero            ## $a1 = FFFFFFE8
-/* 00508 80000968 0C001030 */  jal     osEPiStartDMA
+/* 00508 80000968 0C001030 */  jal     osEPiStartDma
 /* 0050C 8000096C 00003025 */  or      $a2, $zero, $zero          ## $a2 = 00000000
 /* 00510 80000970 14400007 */  bne     $v0, $zero, .L80000990
 /* 00514 80000974 00401825 */  or      $v1, $v0, $zero            ## $v1 = 00000000
@@ -173,7 +173,7 @@ glabel DmaMgr_DmaCallback0
 /* 005D0 80000A30 8FA40020 */  lw      $a0, 0x0020($sp)
 .L80000A34:
 /* 005D4 80000A34 8FA50024 */  lw      $a1, 0x0024($sp)
-/* 005D8 80000A38 0C001030 */  jal     osEPiStartDMA
+/* 005D8 80000A38 0C001030 */  jal     osEPiStartDma
 /* 005DC 80000A3C 8FA60028 */  lw      $a2, 0x0028($sp)
 /* 005E0 80000A40 8FBF001C */  lw      $ra, 0x001C($sp)
 /* 005E4 80000A44 8FB00018 */  lw      $s0, 0x0018($sp)
@@ -213,7 +213,7 @@ glabel DmaMgr_DmaCallback1
 /* 00664 80000AC4 AFB9002C */  sw      $t9, 0x002C($sp)
 /* 00668 80000AC8 27A5001C */  addiu   $a1, $sp, 0x001C           ## $a1 = FFFFFFC4
 /* 0066C 80000ACC 00003025 */  or      $a2, $zero, $zero          ## $a2 = 00000000
-/* 00670 80000AD0 0C001030 */  jal     osEPiStartDMA
+/* 00670 80000AD0 0C001030 */  jal     osEPiStartDma
 /* 00674 80000AD4 AC880014 */  sw      $t0, 0x0014($a0)           ## 00000014
 /* 00678 80000AD8 27A40038 */  addiu   $a0, $sp, 0x0038           ## $a0 = FFFFFFE0
 /* 0067C 80000ADC 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
