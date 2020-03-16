@@ -209,6 +209,7 @@ endseg
 beginseg
      name "code"
      include "build/asm/code/z_en_a_keep.o"
+     include "build/asm/code/z_en_item00.o"
      include "build/asm/code/code.o"
      address 0x800110A0
 endseg

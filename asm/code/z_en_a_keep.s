@@ -744,7 +744,7 @@ glabel En_A_Obj_Draw
 /* 00A44 80011AE4 8DA40000 */  lw      $a0, 0x0000($t5)           ## 00000000
 /* 00A48 80011AE8 AFA7002C */  sw      $a3, 0x002C($sp)
 /* 00A4C 80011AEC AFA60028 */  sw      $a2, 0x0028($sp)
-/* 00A50 80011AF0 0C02AE40 */  jal     func_800AB900
+/* 00A50 80011AF0 0C02AE40 */  jal     Matrix_NewMtx
 /* 00A54 80011AF4 AFA3001C */  sw      $v1, 0x001C($sp)
 /* 00A58 80011AF8 8FA5001C */  lw      $a1, 0x001C($sp)
 /* 00A5C 80011AFC 8FA60028 */  lw      $a2, 0x0028($sp)
