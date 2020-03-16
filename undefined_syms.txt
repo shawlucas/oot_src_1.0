@@ -14,3 +14,6 @@ func_801C7C1C = 0x801C7C1C;
 func_801C7E78 = 0x801C7E78;
 func_801C6EA0 = 0x801C6EA0;
 func_801C6E80 = 0x801C6E80;
+
+// boot_main.c
+osMemSize = 0x80000318;

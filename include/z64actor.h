@@ -186,9 +186,8 @@ typedef struct Actor
     /* 0x134 */ ActorFunc draw; // Draw Routine, writes necessary display lists
 
     /* 0x138 */ ActorOverlay* overlayEntry; // Pointer to the overlay table entry for this actor
-    /* 0x13C */ char    dbgPad[0x10]; // Padding that only exists in the debug rom
     /* From here on, the structure and size varies for each actor */
-} Actor; // size = 0x14C
+} Actor; // size = 0x13C
 
 typedef enum
 {
