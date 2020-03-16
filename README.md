@@ -1,4 +1,4 @@
-Legend of Zelda: Ocarina of Time NTSC 1.0
+# Legend of Zelda: Ocarina of Time NTSC 1.0 Disassembly
 
 Put a decompressed Ocarina of Time 1.0 ROM in the folder, named "baserom.z64"
 
