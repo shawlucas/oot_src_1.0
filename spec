@@ -62,7 +62,7 @@ beginseg
      include "build/asm/libultra_boot/__osResetGlobalIntMask.o"
      include "build/asm/__osDisableInt.o"
      include "build/asm/__osRestoreInt.o"
-     include "build/asm/boot/boot_800051C0.o"
+     include "build/asm/libultra_boot/__osViInit.o"
      include "build/asm/libultra_boot/__osViSwapContext.o"
      include "build/asm/libultra_boot/osPiGetCmdQueue.o"
      include "build/asm/libultra_boot/osEPiReadIo.o"
@@ -76,7 +76,12 @@ beginseg
      include "build/asm/libultra_boot/__osEPiRawWriteIo.o"
      include "build/asm/boot/boot_80005A70.o"
      include "build/asm/libultra_boot/__osSiRawWriteIo.o"
-     include "build/asm/boot/boot.o"
+     include "build/asm/libultra_boot/vimgr.o"
+     include "build/asm/libultra_boot/__osViGetCurrentContext.o"
+     include "build/asm/libultra_boot/osStartThread.o"
+     include "build/asm/libultra_boot/__osSetHWIntrRoutine.o"
+     include "build/asm/libultra_boot/__osGetHWIntrRoutine.o"
+     include "build/data/boot.data.o"
      address 0x80000460
 endseg
 beginseg

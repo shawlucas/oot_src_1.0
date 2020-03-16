@@ -9,7 +9,7 @@
 
 .section .text
 
-glabel func_800051C0
+glabel __osViInit
 /* 04D60 800051C0 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 04D64 800051C4 AFBF0014 */  sw      $ra, 0x0014($sp)
 /* 04D68 800051C8 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
