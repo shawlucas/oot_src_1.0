@@ -14,3 +14,5 @@ It builds the following ROM:
 Credits given to everyone on the Ocarina of Time decompilation team. Most of these function names and documentation are from them.
 
 Special thanks to glank, mzxrules, Fig, Roman, and Revo.
+
+Go check out the much more complete debug rom decompilation: https://github.com/n64decomp/oot
