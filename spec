@@ -208,7 +208,8 @@ beginseg
 endseg
 beginseg
      name "code"
-     include "build/baserom/code.o"
+     include "build/asm/code/code.o"
+     //include "build/baserom/code.o"
      address 0x800110A0
 endseg
 beginseg
