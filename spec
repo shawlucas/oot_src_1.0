@@ -86,7 +86,7 @@ beginseg
 endseg
 beginseg
      name "dmadata"
-     include "build/baserom/dmadata.o"
+     include "build/asm/dmadata.o"
      address 0x8000B140
 endseg
 beginseg
