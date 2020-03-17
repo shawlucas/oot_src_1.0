@@ -210,6 +210,9 @@ beginseg
      name "code"
      include "build/asm/code/z_en_a_keep.o"
      include "build/asm/code/z_en_item00.o"
+     include "build/asm/code/z_particle.o"
+     include "build/asm/code/flg_set.o"
+     include "build/asm/code/z_DLF.o"
      include "build/asm/code/code.o"
      address 0x800110A0
 endseg
