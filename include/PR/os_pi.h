@@ -21,7 +21,7 @@ typedef struct
     u16 transferMode;
     u16 blockNum;
     s32 sectorNum;
-    uintptr_t devAddr;
+    u32 devAddr;
     u32 bmCtlShadow;
     u32 seqCtlShadow;
     __OSBlockInfo block[2];
@@ -44,7 +44,7 @@ typedef struct OSPiHandle_s
 typedef struct
 {
     u8 type;
-    uintptr_t address;
+    u32 address;
 } OSPiInfo;
 
 typedef struct
@@ -59,7 +59,7 @@ typedef struct
 {
     /*0x00*/ OSIoMesgHdr hdr;
     /*0x08*/ void *dramAddr;
-    /*0x0C*/ uintptr_t devAddr;
+    /*0x0C*/ u32 devAddr;
     /*0x10*/ size_t size;
     //OSPiHandle *piHandle; //from the official definition
 } OSIoMesg;
@@ -75,11 +75,11 @@ typedef struct
 /* Functions */
 
 s32 osPiStartDma(OSIoMesg *mb, s32 priority, s32 direction,
-                 uintptr_t devAddr, void *vAddr, size_t nbytes, OSMesgQueue *mq);
+                 u32 devAddr, void *vAddr, size_t nbytes, OSMesgQueue *mq);
 void osCreatePiManager(OSPri pri, OSMesgQueue *cmdQ, OSMesg *cmdBuf,
                        s32 cmdMsgCnt);
 OSMesgQueue *osPiGetCmdQueue(void);
-s32 osPiWriteIo(uintptr_t devAddr, u32 data);
-s32 osPiReadIo(uintptr_t devAddr, u32 *data);
+s32 osPiWriteIo(u32 devAddr, u32 data);
+s32 osPiReadIo(u32 devAddr, u32 *data);
 
 #endif
