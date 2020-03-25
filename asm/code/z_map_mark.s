@@ -39,7 +39,7 @@ glabel func_80066DF0
 /* 55D94 80066E34 8CC61C04 */  lw      $a2, 0x1C04($a2)           ## 800F1C04
 /* 55D98 80066E38 8CA51C00 */  lw      $a1, 0x1C00($a1)           ## 800F1C00
 /* 55D9C 80066E3C 8C841BFC */  lw      $a0, 0x1BFC($a0)           ## 800F1BFC
-/* 55DA0 80066E40 0C0332EE */  jal     func_800CCBB8
+/* 55DA0 80066E40 0C0332EE */  jal     Overlay_Load
 /* 55DA4 80066E44 AFA20010 */  sw      $v0, 0x0010($sp)
 /* 55DA8 80066E48 3C03800F */  lui     $v1, 0x800F                ## $v1 = 800F0000
 /* 55DAC 80066E4C 8C631C0C */  lw      $v1, 0x1C0C($v1)           ## 800F1C0C
