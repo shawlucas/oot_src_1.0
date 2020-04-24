@@ -16,3 +16,5 @@ Credits given to everyone on the Ocarina of Time decompilation team. Most of the
 Special thanks to glank, mzxrules, Fig, Roman, and everyone involved in Ocarina of Time decompilation for pretty much all the information.
 
 Go check out the much more complete debug rom decompilation: https://github.com/n64decomp/oot
+
+disclaimer: some things might not be right or even compilable. i have been working on debug decomp recently so i haven't gotten around to this as much.
