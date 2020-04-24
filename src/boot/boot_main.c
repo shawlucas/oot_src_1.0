@@ -1,6 +1,9 @@
 #include <libultra/ultra64.h>
 #include <global.h>
 
+extern StackEntry sBootThreadInfo;
+extern StackEntry sIdleThreadInfo;
+
 void cleararena(void) {
     bzero(_dmadataSegmentStart, (u8*)osMemSize - OS_K0_TO_PHYSICAL(_dmadataSegmentStart));
 }
@@ -18,6 +21,6 @@ void bootproc(void) {
     Locale_Init();
 
     StackCheck_Init(&sIdleThreadInfo, sIdleThreadStack, sIdleThreadStack + sizeof(sIdleThreadStack), 0, 256, "idle");
-    osCreateThread(&sIdleThread, 1, Idle_ThreadEntry, 0, sIdleThreadStack + sizeof(sIdleThreadStack), 10);
+    osCreateThread(&sIdleThread, 1, Idle_ThreadEntry, 0, sIdleThreadStack + sizeof(sIdleThreadStack), MAIN_PRIORITY);
     osStartThread(&sIdleThread);
 }

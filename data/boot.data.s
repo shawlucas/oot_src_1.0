@@ -10,4 +10,7 @@
 .incbin "baserom/boot", 0x5C50, 0x4A0
 
 .section .rodata
-.incbin "baserom/boot", 0x6100, 0x2D0
+
+
+
+.incbin "baserom/boot", 0x6110, 0x2C0
