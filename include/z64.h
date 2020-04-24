@@ -6,6 +6,7 @@
 #include <libultra/PR/gs2dex.h>
 #include <global.h>
 #include <stdarg.h>
+#include <z64dma.h>
 
 typedef struct StackEntry
 {

@@ -21,7 +21,6 @@ void Main_ThreadEntry(void* arg0) {
 
 }
 
-//#pragma GLOBAL_ASM("asm/non_matchings/boot/idle/Idle_ThreadEntry.s")
 void Idle_ThreadEntry(void* a0) {
 
     osCreateViManager(OS_PRIORITY_VIMGR);

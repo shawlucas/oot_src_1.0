@@ -65,7 +65,7 @@ glabel LogUtils_HungUpThread
 /* 01700 80001B60 0C00056F */  jal     func_800015BC
 /* 01704 80001B64 8FA7001C */  lw      $a3, 0x001C($sp)
 /* 01708 80001B68 8FA40018 */  lw      $a0, 0x0018($sp)
-/* 0170C 80001B6C 0C02BDCD */  jal     Fault_AddHungUpAndCrash
+/* 0170C 80001B6C 0C02BDCD */  jal     Fault_AddHungupAndCrash
 /* 01710 80001B70 8FA5001C */  lw      $a1, 0x001C($sp)
 /* 01714 80001B74 8FBF0014 */  lw      $ra, 0x0014($sp)
 /* 01718 80001B78 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000
@@ -80,7 +80,7 @@ glabel func_80001B84
 /* 01734 80001B94 248466F8 */  addiu   $a0, $a0, 0x66F8           ## $a0 = 800066F8
 /* 01738 80001B98 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
 /* 0173C 80001B9C 24846708 */  addiu   $a0, $a0, 0x6708           ## $a0 = 80006708
-/* 01740 80001BA0 0C02BDCD */  jal     Fault_AddHungUpAndCrash
+/* 01740 80001BA0 0C02BDCD */  jal     Fault_AddHungupAndCrash
 /* 01744 80001BA4 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 01748 80001BA8 8FBF0014 */  lw      $ra, 0x0014($sp)
 /* 0174C 80001BAC 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

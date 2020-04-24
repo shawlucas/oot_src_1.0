@@ -1,14 +1,10 @@
 Main = 0x800A1C50;
-DmaMgr_DMARomToRam = 0x8000085C;
-Fault_AddHungUpAndCrash = 0x800AF734;
 osSyncPrintf = 0x800ADBF8;
 func_800ADB80 = 0x800ADB80;
 func_800ADB80 = 0x800ADB80;
 func_800AEF8C = 0x800AEF8C;
 func_800AF014 = 0x800AF014;
 func_800A3644 = 0x800A3644;
-func_800AF734 = 0x800AF734;
-
 
 func_801C7C1C = 0x801C7C1C;
 func_801C7E78 = 0x801C7E78;
@@ -36,3 +32,22 @@ osViModeNtscLan1 = 0x800063C0;
 osViModeMpalLan1 = 0x80006410;
 D_80006230 = 0x80006230;
 osTvType = 0x80000300;
+
+// z_std_dma.c
+sDmaMgrDmaBuffSize = 0x80006274;
+sDmaMgrMsgQueue = 0x80007D40;
+sDmaMgrStackInfo = 0x80007D20;
+sDmaMgrStack = 0x80007F88;
+sDmaMgrThread = 0x80007DD8;
+sDmaMgrMsgs = 0x80007D58;
+gDmaDataTable = 0x8000B140;
+
+__osFaultedThread = 0x80006344;
+__osRunQueue = 0x80006338;
+__osThreadTail = 0x80006330;
+__osActiveQueue = 0x8000633C;
+__osRunningThread = 0x80006340;
+__osPiDevMgr = 0x80006350;
+__osIntOffTable = 0x80006710;
+__osIntTable = 0x80006730;
+__osRcpImTable = 0x80006780;

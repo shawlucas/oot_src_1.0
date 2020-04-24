@@ -1041,7 +1041,7 @@ glabel func_80080360
 .L80080428:
 /* 6F388 80080428 3C048011 */  lui     $a0, 0x8011                ## $a0 = 80110000
 /* 6F38C 8008042C 24848A10 */  addiu   $a0, $a0, 0x8A10           ## $a0 = 80108A10
-/* 6F390 80080430 0C02BDCD */  jal     func_800AF734
+/* 6F390 80080430 0C02BDCD */  jal     Fault_AddHungupAndCrash
 /* 6F394 80080434 240502D4 */  addiu   $a1, $zero, 0x02D4         ## $a1 = 000002D4
 /* 6F398 80080438 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L8008043C:
@@ -1330,7 +1330,7 @@ glabel func_80080820
 .L80080868:
 /* 6F7C8 80080868 3C048011 */  lui     $a0, 0x8011                ## $a0 = 80110000
 /* 6F7CC 8008086C 24848A1C */  addiu   $a0, $a0, 0x8A1C           ## $a0 = 80108A1C
-/* 6F7D0 80080870 0C02BDCD */  jal     func_800AF734
+/* 6F7D0 80080870 0C02BDCD */  jal     Fault_AddHungupAndCrash
 /* 6F7D4 80080874 24050351 */  addiu   $a1, $zero, 0x0351         ## $a1 = 00000351
 /* 6F7D8 80080878 8FBF0014 */  lw      $ra, 0x0014($sp)
 .L8008087C:

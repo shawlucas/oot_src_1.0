@@ -7,7 +7,7 @@ beginseg
      name "boot"
      include "build/src/boot/boot_main.o"
      include "build/src/boot/idle.o"
-     include "build/asm/boot/z_std_dma.o"
+     include "build/src/boot/z_std_dma.o"
      include "build/asm/boot/yaz0.o"
      include "build/asm/boot/z_locale.o"
      include "build/asm/boot/boot_800015A0.o"

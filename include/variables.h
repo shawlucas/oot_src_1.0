@@ -15,4 +15,5 @@ extern u8 D_8012BE30[]; // _codeSegmentBssEnd ?
 extern OSViMode osViModeNtscLan1;
 extern OSViMode osViModeMpalLan1;
 extern s32 osTvType;
+extern DmaEntry gDmaDataTable[0x5F6];
 #endif
