@@ -60,7 +60,7 @@ SPEC := spec
 # baserom files
 include baserom_files.mk
 
-SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers
+SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers lib lib/libultra lib/libultra/src lib/libultra/src/io lib/libultra/src/os
 ASM_DIRS := asm asm/code data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/boot asm/libultra_boot asm/overlays asm/overlays/actors asm/pad
 
 #include overlays.mk
@@ -101,8 +101,11 @@ O_FILES       := $(foreach f,$(S_FILES:.s=.o),build/$f) \
 $(shell mkdir -p build/baserom)
 $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(shell mkdir -p build/$(dir)))
 
+
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/%: OPTIMIZATION := -O1
+build/lib/libultra/src/os/%: OPTIMIZATION := -O1
 build/src/code/fault.o: CFLAGS += -trapuv
 build/src/code/fault.o: OPTIMIZATION := -O2 -g3
 build/src/code/fault_drawer.o: CFLAGS += -trapuv
@@ -182,10 +185,15 @@ build/src/%.o: src/%.c
 	$(CC_CHECK) $^
 	@$(OBJDUMP) -d $@ > $(@:.o=.s)
 
+build/lib/libultra/src/%.o: lib/libultra/src/%.c
+	$(CC) -c $(CFLAGS) $(OPTIMIZATION) -o $@ $^
+	$(CC_CHECK) $^
+	@$(OBJDUMP) -d $@ > $(@:.o=.s)
 
 build/src/libultra_code/%.o: CC := $(CC_OLD)
 build/src/libultra_boot_O1/%.o: CC := $(CC_OLD)
 build/src/libultra_boot_O2/%.o: CC := $(CC_OLD)
+build/lib/libultra/src/io/%.o: CC := $(CC_OLD)
 
 build/src/boot/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/code/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --

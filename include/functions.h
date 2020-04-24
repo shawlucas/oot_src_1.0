@@ -20,4 +20,7 @@ s32 DmaMgr_DMARomToRam(u32 rom, u32 ram, u32 size);
 void DmaMgr_ProcessMsg(DmaRequest* req);
 s32 DmaMgr_SendRequestImpl(DmaRequest* req, u32 ram, u32 vrom, u32 size, u32 unk, OSMesgQueue* queue, OSMesg msg);
 void Fault_AddHungupAndCrash(const char*, u32);
+s32 osJamMesg(OSMesgQueue *mq, OSMesg msg, s32 flag);
+s32 osSendMesg(OSMesgQueue* mq, OSMesg mesg, s32 flag);
+OSMesgQueue* osPiGetCmdQueue();
 #endif
