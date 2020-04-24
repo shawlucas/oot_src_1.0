@@ -1,7 +1,7 @@
 #ifndef _FUNCTIONS_H_
 #define _FUNCTIONS_H_
 
-#include <PR/ultratypes.h>
+#include <libultra/PR/ultratypes.h>
 #include <osint.h>
 #include <viint.h>
 #include <guint.h>

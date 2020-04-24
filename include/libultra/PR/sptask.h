@@ -25,7 +25,7 @@
 extern "C" {
 #endif
 
-#include <PR/ultratypes.h>
+#include <libultra/PR/ultratypes.h>
 
 #if defined(_LANGUAGE_C) || defined(_LANGUAGE_C_PLUS_PLUS)
 
@@ -114,7 +114,7 @@ typedef u32 OSYieldResult;
  *	offsets into the task structure
  */
 
-#include <PR/sptaskoff.h>
+#include <libultra/PR/sptaskoff.h>
 
 #endif
 

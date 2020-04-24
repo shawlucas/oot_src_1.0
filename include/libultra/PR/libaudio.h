@@ -33,8 +33,8 @@
 extern "C" {
 #endif
 
-#include <PR/ultratypes.h>
-#include <PR/mbi.h>
+#include <libultra/PR/ultratypes.h>
+#include <libultra/PR/mbi.h>
     
 /***********************************************************************
  * misc defines

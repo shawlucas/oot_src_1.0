@@ -17,3 +17,10 @@ func_801C6E80 = 0x801C6E80;
 
 // boot_main.c
 osMemSize = 0x80000318;
+sBootThreadInfo = 0x80006830;
+sMainThread = 0x80007220;
+sBootThreadStack = 0x80006E20;
+sIdleThreadInfo = 0x80006E00;
+sIdleThreadStack = 0x80006A00;
+sIdleThread = 0x80006850;
+gCartHandle = 0x80006260;

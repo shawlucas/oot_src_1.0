@@ -25,7 +25,7 @@
 extern "C" {
 #endif
 
-#include <PR/ultratypes.h>
+#include <libultra/PR/ultratypes.h>
 
 #if defined(_LANGUAGE_C) || defined(_LANGUAGE_C_PLUS_PLUS)
 

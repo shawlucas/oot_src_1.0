@@ -21,9 +21,9 @@
  *
  **************************************************************************/
 
-#include <PR/mbi.h>
-#include <PR/ultratypes.h>
-#include <PR/sptask.h>
+#include <libultra/PR/mbi.h>
+#include <libultra/PR/ultratypes.h>
+#include <libultra/PR/sptask.h>
 
 #ifndef MAX
 #define MAX(a,b) (((a)>(b))?(a):(b))

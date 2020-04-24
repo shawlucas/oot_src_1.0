@@ -218,7 +218,7 @@ glabel func_80001564
 /* 0110C 8000156C 00000000 */  nop
 
 
-glabel func_80001570
+glabel __osInitialize_autodetect
 /* 01110 80001570 3C0EA030 */  lui     $t6, 0xA030                ## $t6 = A0300000
 /* 01114 80001574 8DCFB1F4 */  lw      $t7, -0x4E0C($t6)          ## A02FB1F4
 /* 01118 80001578 3C018001 */  lui     $at, 0x8001                ## $at = 80010000

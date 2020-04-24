@@ -35,7 +35,7 @@
 extern "C" {
 #endif
 
-#include <PR/ultratypes.h>
+#include <libultra/PR/ultratypes.h>
 
 
 /***************************************

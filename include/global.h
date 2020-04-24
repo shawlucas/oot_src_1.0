@@ -1,5 +1,5 @@
-#ifndef _GLOBAL_H_
-#define _GLOBAL_H_
+#ifndef _Z64_GLOBAL_H_
+#define _Z64_GLOBAL_H_
 
 #include "functions.h"
 #include "variables.h"

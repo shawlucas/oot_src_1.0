@@ -15,26 +15,26 @@
  *
  *  $Revision: 1.10 $
  *  $Date: 1997/02/11 08:37:33 $
- *  $Source: /disk6/Master/cvsmdev2/PR/include/ultra64.h,v $
+ *  $Source: /disk6/Master/cvsmdev2/libultra/PR/include/ultra64.h,v $
  *
  **************************************************************************/
 
 #ifndef _ULTRA64_H_
 #define _ULTRA64_H_
 
-#include <PR/ultratypes.h>
-#include <PR/rcp.h>
-#include <PR/os.h>
-#include <PR/region.h>
-#include <PR/rmon.h>
-#include <PR/sptask.h>
-#include <PR/mbi.h>
-#include <PR/libaudio.h>
-#include <PR/gu.h>
-#include <PR/ramrom.h>
-#include <PR/sp.h>
-#include <PR/ucode.h>
-#include <PR/ultraerror.h>
-#include <PR/ultralog.h>
+#include <libultra/PR/ultratypes.h>
+#include <libultra/PR/rcp.h>
+#include <libultra/PR/os.h>
+#include <libultra/PR/region.h>
+#include <libultra/PR/rmon.h>
+#include <libultra/PR/sptask.h>
+#include <libultra/PR/mbi.h>
+#include <libultra/PR/libaudio.h>
+#include <libultra/PR/gu.h>
+#include <libultra/PR/ramrom.h>
+#include <libultra/PR/sp.h>
+#include <libultra/PR/ucode.h>
+#include <libultra/PR/ultraerror.h>
+#include <libultra/PR/ultralog.h>
 
 #endif

@@ -9,7 +9,7 @@
 
 .section .text
 
-glabel __osInitialize_Common
+glabel __osInitialize_common
 /* 02C10 80003070 27BDFFC8 */  addiu   $sp, $sp, 0xFFC8           ## $sp = FFFFFFC8
 /* 02C14 80003074 AFBF001C */  sw      $ra, 0x001C($sp)
 /* 02C18 80003078 240E0001 */  addiu   $t6, $zero, 0x0001         ## $t6 = 00000001

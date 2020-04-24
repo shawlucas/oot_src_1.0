@@ -35,7 +35,7 @@ MKLDSCRIPT := tools/mkldscript
 ELF2ROM    := tools/elf2rom
 ZAP2        := tools/ZAP2/ZAP2.out
 
-OPTIMIZATION := -O2
+OPTIMIZATION := -O2 -g3
 ASFLAGS := -march=vr4300 -32 -I include
 
 # we support Microsoft extensions such as anonymous structs, which the compiler does support but warns for their usage. Surpress the warnings with -woff.

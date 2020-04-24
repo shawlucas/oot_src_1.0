@@ -34,7 +34,7 @@ GCDEFS = $(HW_FLAGS) -Wab,-r4300_mul
 VCSOPTS = $(GVCSOPTS) $(LVCSOPTS) $(VVCSOPTS)
 GVCSOPTS = +acc -V -M -Mupdate -Mmakep=pmake				   \
 	   -CC "-mips2 -Wab,-big_got -Wab,-dwalign" -lgl -limage	   \
-	   -P $(PRDEPTH)/rdpsim/pli/pli.tab $(ROOT)/usr/lib/PR/libpli.a
+	   -P $(PRDEPTH)/rdpsim/pli/pli.tab $(ROOT)/usr/lib/libultra/PR/libpli.a
 
 SHELL	= /bin/sh
 

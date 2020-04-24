@@ -350,7 +350,7 @@ typedef union {
 #endif	/* _LANGUAGE_C */
 
 #ifdef	_LANGUAGE_ASSEMBLY
-#include <PR/gtoff.h>
+#include <libultra/PR/gtoff.h>
 #endif	/* _LANGUAGE_ASSEMBLY */
 
 #ifdef	_LANGUAGE_C_PLUS_PLUS

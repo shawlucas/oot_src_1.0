@@ -1,7 +1,7 @@
 #ifndef _VARIABLES_H_
 #define _VARIABLES_H_
 
-#include <PR/ultratypes.h>
+#include <libultra/PR/ultratypes.h>
 #include <osint.h>
 #include <viint.h>
 #include <guint.h>

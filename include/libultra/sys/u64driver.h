@@ -19,8 +19,8 @@
  *
  */
 
-#include <PR/rdb.h>
-#include <PR/ramrom.h>
+#include <libultra/PR/rdb.h>
+#include <libultra/PR/ramrom.h>
 #include "u64gio.h"
 
 
