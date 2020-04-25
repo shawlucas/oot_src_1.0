@@ -35,4 +35,5 @@ extern OSMesgQueue piEventQueue;
 extern OSMesg piEventBuf[1];
 extern OSMesgQueue __osPiAccessQueue;
 extern u8 piStackThread[0x1000];
+extern void* osRomBase;
 #endif

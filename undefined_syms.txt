@@ -84,3 +84,6 @@ piEventQueue = 0x80009C10;
 piEventBuf = 0x80009C28;
 piThread = 0x80008A60;
 piStackThread = 0x80008A60;
+
+// pirawdma.c
+osRomBase = 0x80000308;

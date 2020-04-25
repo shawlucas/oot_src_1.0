@@ -103,6 +103,7 @@ $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCEN
 
 build/lib/libultra/src/io/pimgr.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/devmgr.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/pirawdma.o: OPTIMIZATION := -O2
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/%.o: OPTIMIZATION := -O1
