@@ -60,7 +60,7 @@ SPEC := spec
 # baserom files
 include baserom_files.mk
 
-SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers lib lib/libultra lib/libultra/src lib/libultra/src/io lib/libultra/src/os
+SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers lib lib/libultra lib/libultra/src lib/libultra/src/io lib/libultra/src/os lib/libc/ lib/libc/src
 ASM_DIRS := asm asm/code data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates lib/libultra/src/os asm/boot asm/libultra_boot asm/overlays asm/overlays/actors asm/pad
 
 #include overlays.mk
@@ -105,12 +105,15 @@ build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/epidma.o: OPTIMIZATION := -O1
 build/lib/libultra/src/io/driverominit.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/piacs.o: OPTIMIZATION := -O1
 build/lib/libultra/src/os/%: OPTIMIZATION := -O1
 build/src/code/fault.o: CFLAGS += -trapuv
 build/src/code/fault.o: OPTIMIZATION := -O2 -g3
 build/src/code/fault_drawer.o: CFLAGS += -trapuv
 build/src/code/fault_drawer.o: OPTIMIZATION := -O2 -g3
 build/src/boot/logutils.o: OPTIMIZATION := -O2
+build/lib/libc/src/ll%: OPTIMIZATION := -O1
+build/lib/libc/src/ll%: CFLAGS := -mips3 -32 -G 0 -non_shared -Xfullwarn -Xcpluscomm -I include -Wab,-r4300_mul -woff 649,838
 
 #build/src/boot/z_std_dma.o: OPTIMIZATION := -O2 -g3
 #### Main Targets ###
@@ -195,17 +198,25 @@ build/lib/libultra/src/%.o: lib/libultra/src/%.c
 	$(CC_CHECK) $^
 	@$(OBJDUMP) -d $@ > $(@:.o=.s)
 
+build/lib/libc/src/ll.o: lib/libc/src/ll.c
+	$(CC) -c $(CFLAGS) $(OPTIMIZATION) -o $@ $^
+	./tools/set_o32abi_bit.py $@
+	$(CC_CHECK) $^
+	@$(OBJDUMP) -d $@ > $(@:.o=.s)
+
 build/src/libultra_code/%.o: CC := $(CC_OLD)
 build/src/libultra_boot_O1/%.o: CC := $(CC_OLD)
 build/src/libultra_boot_O2/%.o: CC := $(CC_OLD)
 build/lib/libultra/src/io/%.o: CC := $(CC_OLD)
+build/lib/libc/%.o: CC := $(CC_OLD)
 
 build/src/boot/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/code/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/actors/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/effects/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/gamestates/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
-build/lib/libultra/src/io/driverominit.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+build/lib/libultra/src/io/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+build/lib/libc/src/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 #build/assets/textures/%.o: assets/textures/%.zdata
 #	$(OBJCOPY) -I binary -O elf32-big $< $@
 

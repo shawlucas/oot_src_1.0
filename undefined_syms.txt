@@ -61,3 +61,8 @@ sYaz0CurDataEnd = 0x80008890;
 sYaz0CurSize = 0x80008898;
 sYaz0DataBuffer = 0x80008490;
 sYaz0CurRomStart = 0x80008894;
+
+// piacs.c
+__osPiAccessQueueEnabled = 0x800062F0;
+__osPiAccessQueue = 0x80008948;
+piAccessBuf = 0x80008940;

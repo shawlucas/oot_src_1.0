@@ -23,4 +23,5 @@ void Fault_AddHungupAndCrash(const char*, u32);
 s32 osJamMesg(OSMesgQueue *mq, OSMesg msg, s32 flag);
 s32 osSendMesg(OSMesgQueue* mq, OSMesg mesg, s32 flag);
 OSMesgQueue* osPiGetCmdQueue();
+void __osPiGetAccess(void);
 #endif
