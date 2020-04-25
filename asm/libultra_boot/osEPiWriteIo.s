@@ -18,7 +18,7 @@ glabel osEPiWriteIo
 /* 053B4 80005814 AFA60028 */  sw      $a2, 0x0028($sp)
 /* 053B8 80005818 8FA40020 */  lw      $a0, 0x0020($sp)
 /* 053BC 8000581C 8FA50024 */  lw      $a1, 0x0024($sp)
-/* 053C0 80005820 0C001644 */  jal     __osEPiRawWriteIo
+/* 053C0 80005820 0C001644 */  jal     osEPiRawWriteIo
 /* 053C4 80005824 8FA60028 */  lw      $a2, 0x0028($sp)
 /* 053C8 80005828 0C00077D */  jal     __osPiRelAccess
 /* 053CC 8000582C AFA2001C */  sw      $v0, 0x001C($sp)

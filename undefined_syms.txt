@@ -66,3 +66,21 @@ sYaz0CurRomStart = 0x80008894;
 __osPiAccessQueueEnabled = 0x800062F0;
 __osPiAccessQueue = 0x80008948;
 piAccessBuf = 0x80008940;
+
+// initialize.c
+__osFinalrom = 0x80008960;
+osAppNMIBuffer = 0x8000031C;
+osViClock = 0x80006358;
+osResetType = 0x8000030C;
+osClockRate = 0x80006350;
+__Dom1SpeedParam = 0x80008970;
+__Dom2SpeedParam = 0x800089E8;
+
+// vigetnextframebuf.c
+__osViNext = 0x800064C4;
+
+// pimgr.c
+piEventQueue = 0x80009C10;
+piEventBuf = 0x80009C28;
+piThread = 0x80008A60;
+piStackThread = 0x80008A60;

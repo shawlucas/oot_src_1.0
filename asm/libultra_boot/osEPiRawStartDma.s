@@ -9,7 +9,7 @@
 
 .section .text
 
-glabel __osEPiRawStartDma
+glabel osEPiRawStartDma
 /* 04280 800046E0 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 04284 800046E4 3C03A460 */  lui     $v1, 0xA460                ## $v1 = A4600000
 /* 04288 800046E8 34630010 */  ori     $v1, $v1, 0x0010           ## $v1 = A4600010

@@ -9,7 +9,7 @@
 
 .section .text
 
-glabel __osEPiRawReadIo
+glabel osEPiRawReadIo
 /* 04120 80004580 3C03A460 */  lui     $v1, 0xA460                ## $v1 = A4600000
 /* 04124 80004584 34630010 */  ori     $v1, $v1, 0x0010           ## $v1 = A4600010
 /* 04128 80004588 8C620000 */  lw      $v0, 0x0000($v1)           ## A4600010

@@ -24,4 +24,14 @@ s32 osJamMesg(OSMesgQueue *mq, OSMesg msg, s32 flag);
 s32 osSendMesg(OSMesgQueue* mq, OSMesg mesg, s32 flag);
 OSMesgQueue* osPiGetCmdQueue();
 void __osPiGetAccess(void);
+void __osCleanupThread(void);
+void __osSetSR(u32);
+u32 __osGetSR(void);
+u32 __osSetFpcCsr(u32);
+s32 __osSiRawReadIo(u32 devAddr, u32 *data);
+s32 __osSiRawWriteIo(u32 devAddr, u32 data);
+void __createSpeedParam(void);
+u32 __osGetCause(void);
+s32 osEPiRawStartDma(OSPiHandle *pihandle, s32 direction, u32 devAddr, void *dramAddr, u32 size);
+s32 osPiRawStartDma(s32 direction, u32 devAddr, void *dramAddr, u32 size);
 #endif

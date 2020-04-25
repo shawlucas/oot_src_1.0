@@ -1,14 +1,3 @@
-.include "macro.inc"
-
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purposee registers
-
-.align 4
-
-.section .text
-
 glabel osCreatePiManager
 /* 030A0 80003500 27BDFFD0 */  addiu   $sp, $sp, 0xFFD0           ## $sp = FFFFFFD0
 /* 030A4 80003504 AFB00020 */  sw      $s0, 0x0020($sp)

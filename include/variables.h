@@ -3,6 +3,7 @@
 
 #include "z64.h"
 #include <segment_symbols.h>
+#include <../lib/libultra/src/io/viint.h>
 
 extern u32 osMemSize;
 extern OSThread sIdleThread;
@@ -20,4 +21,18 @@ extern OSThread* __osRunningThread;
 extern OSThread* __osRunQueue;
 extern OSPiHandle* __osPiTable;
 extern OSPiHandle* __osCurrentHandle[];
+extern OSThread* __osActiveQueue;
+extern s32 osAppNMIBuffer[];
+extern s32 osViClock;
+extern s32 osResetType;
+extern OSTime osClockRate;
+extern u32 __osFinalrom;
+extern OSPiHandle __Dom1SpeedParam;
+extern OSPiHandle __Dom2SpeedParam;
+extern __OSViContext* __osViNext;
+extern OSThread piThread;
+extern OSMesgQueue piEventQueue;
+extern OSMesg piEventBuf[1];
+extern OSMesgQueue __osPiAccessQueue;
+extern u8 piStackThread[0x1000];
 #endif
