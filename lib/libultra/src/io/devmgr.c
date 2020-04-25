@@ -2,9 +2,8 @@
 #include <libultra/PR/rcp.h>
 #include <global.h>
 #include "piint.h"
-#pragma GLOBAL_ASM("asm/non_matchings/boot/devmgr/__osDevMgrMain.s")
 
-/*void __osDevMgrMain(void *args)
+void __osDevMgrMain(void *args)
 {
   OSIoMesg *mb;
   OSMesg em;
@@ -113,4 +112,4 @@
       }
     }
   }
-}*/
+}
