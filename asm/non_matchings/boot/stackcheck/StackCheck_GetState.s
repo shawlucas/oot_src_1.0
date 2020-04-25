@@ -78,7 +78,7 @@ glabel StackCheck_GetState
 .L80001A6C:
 /* 0160C 80001A6C AFA90010 */  sw      $t1, 0x0010($sp)
 /* 01610 80001A70 AFA80014 */  sw      $t0, 0x0014($sp)
-/* 01614 80001A74 0C00056F */  jal     func_800015BC
+/* 01614 80001A74 0C00056F */  jal     DEBUG_LOG
 /* 01618 80001A78 AFA30018 */  sw      $v1, 0x0018($sp)
 /* 0161C 80001A7C 02001025 */  or      $v0, $s0, $zero            ## $v0 = 00000001
 .L80001A80:

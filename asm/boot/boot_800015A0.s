@@ -19,7 +19,7 @@ glabel func_800015A0
 /* 01158 800015B8 27BD0008 */  addiu   $sp, $sp, 0x0008           ## $sp = 00000000
 
 
-glabel func_800015BC
+glabel DEBUG_LOG
 /* 0115C 800015BC 27BDFFF8 */  addiu   $sp, $sp, 0xFFF8           ## $sp = FFFFFFF8
 /* 01160 800015C0 AFA40008 */  sw      $a0, 0x0008($sp)
 /* 01164 800015C4 AFA5000C */  sw      $a1, 0x000C($sp)

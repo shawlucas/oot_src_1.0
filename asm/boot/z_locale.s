@@ -34,7 +34,7 @@ glabel Locale_Init
 /* 00E90 800012F0 AC2F6280 */  sw      $t7, 0x6280($at)           ## 80006280
 .L800012F4:
 /* 00E94 800012F4 248465F0 */  addiu   $a0, $a0, 0x65F0           ## $a0 = 800065F0
-/* 00E98 800012F8 0C0006CE */  jal     LogUtils_HungUpThread
+/* 00E98 800012F8 0C0006CE */  jal     LogUtils_HungupThread
 /* 00E9C 800012FC 24050056 */  addiu   $a1, $zero, 0x0056         ## $a1 = 00000056
 .L80001300:
 /* 00EA0 80001300 8FBF0014 */  lw      $ra, 0x0014($sp)

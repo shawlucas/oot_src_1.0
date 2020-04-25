@@ -4135,7 +4135,7 @@ glabel func_8002EC70
 /* 1DDAC 8002EE4C 3C048010 */  lui     $a0, 0x8010                ## $a0 = 80100000
 /* 1DDB0 8002EE50 24846A50 */  addiu   $a0, $a0, 0x6A50           ## $a0 = 80106A50
 /* 1DDB4 8002EE54 2405104D */  addiu   $a1, $zero, 0x104D         ## $a1 = 0000104D
-/* 1DDB8 8002EE58 0C0006CE */  jal     LogUtils_HungUpThread
+/* 1DDB8 8002EE58 0C0006CE */  jal     LogUtils_HungupThread
 /* 1DDBC 8002EE5C AFA80040 */  sw      $t0, 0x0040($sp)
 /* 1DDC0 8002EE60 8FA80040 */  lw      $t0, 0x0040($sp)
 .L8002EE64:
@@ -4231,7 +4231,7 @@ glabel func_8002EC70
 /* 1DF24 8002EFC4 0043082B */  sltu    $at, $v0, $v1
 /* 1DF28 8002EFC8 10200005 */  beq     $at, $zero, .L8002EFE0
 /* 1DF2C 8002EFCC 24051083 */  addiu   $a1, $zero, 0x1083         ## $a1 = 00001083
-/* 1DF30 8002EFD0 0C0006CE */  jal     LogUtils_HungUpThread
+/* 1DF30 8002EFD0 0C0006CE */  jal     LogUtils_HungupThread
 /* 1DF34 8002EFD4 AFA30048 */  sw      $v1, 0x0048($sp)
 /* 1DF38 8002EFD8 8FA30048 */  lw      $v1, 0x0048($sp)
 /* 1DF3C 8002EFDC 8E021460 */  lw      $v0, 0x1460($s0)           ## 00001460

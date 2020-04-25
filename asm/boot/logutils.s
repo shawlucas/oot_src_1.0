@@ -41,7 +41,7 @@ glabel LogUtils_CheckFloatRange
 /* 016AC 80001B0C 8FA70050 */  lw      $a3, 0x0050($sp)
 /* 016B0 80001B10 E7AC004C */  swc1    $f12, 0x004C($sp)
 /* 016B4 80001B14 AFAE0018 */  sw      $t6, 0x0018($sp)
-/* 016B8 80001B18 0C00056F */  jal     func_800015BC
+/* 016B8 80001B18 0C00056F */  jal     DEBUG_LOG
 /* 016BC 80001B1C AFAF0028 */  sw      $t7, 0x0028($sp)
 /* 016C0 80001B20 C7AC004C */  lwc1    $f12, 0x004C($sp)
 /* 016C4 80001B24 8FBF003C */  lw      $ra, 0x003C($sp)
@@ -51,7 +51,7 @@ glabel LogUtils_CheckFloatRange
 /* 016D0 80001B30 03E00008 */  jr      $ra
 /* 016D4 80001B34 00000000 */  nop
 
-glabel LogUtils_HungUpThread
+glabel LogUtils_HungupThread
 /* 016D8 80001B38 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 016DC 80001B3C AFBF0014 */  sw      $ra, 0x0014($sp)
 /* 016E0 80001B40 AFA40018 */  sw      $a0, 0x0018($sp)
@@ -62,7 +62,7 @@ glabel LogUtils_HungUpThread
 /* 016F4 80001B54 248466D0 */  addiu   $a0, $a0, 0x66D0           ## $a0 = 800066D0
 /* 016F8 80001B58 00402825 */  or      $a1, $v0, $zero            ## $a1 = 00000000
 /* 016FC 80001B5C 8FA60018 */  lw      $a2, 0x0018($sp)
-/* 01700 80001B60 0C00056F */  jal     func_800015BC
+/* 01700 80001B60 0C00056F */  jal     DEBUG_LOG
 /* 01704 80001B64 8FA7001C */  lw      $a3, 0x001C($sp)
 /* 01708 80001B68 8FA40018 */  lw      $a0, 0x0018($sp)
 /* 0170C 80001B6C 0C02BDCD */  jal     Fault_AddHungupAndCrash
@@ -72,11 +72,11 @@ glabel LogUtils_HungUpThread
 /* 0171C 80001B7C 03E00008 */  jr      $ra
 /* 01720 80001B80 00000000 */  nop
 
-glabel func_80001B84
+glabel LogUtils_ResetHungup
 /* 01724 80001B84 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 01728 80001B88 AFBF0014 */  sw      $ra, 0x0014($sp)
 /* 0172C 80001B8C 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
-/* 01730 80001B90 0C00056F */  jal     func_800015BC
+/* 01730 80001B90 0C00056F */  jal     DEBUG_LOG
 /* 01734 80001B94 248466F8 */  addiu   $a0, $a0, 0x66F8           ## $a0 = 800066F8
 /* 01738 80001B98 3C048000 */  lui     $a0, 0x8000                ## $a0 = 80000000
 /* 0173C 80001B9C 24846708 */  addiu   $a0, $a0, 0x6708           ## $a0 = 80006708

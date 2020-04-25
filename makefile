@@ -110,6 +110,7 @@ build/src/code/fault.o: CFLAGS += -trapuv
 build/src/code/fault.o: OPTIMIZATION := -O2 -g3
 build/src/code/fault_drawer.o: CFLAGS += -trapuv
 build/src/code/fault_drawer.o: OPTIMIZATION := -O2 -g3
+build/src/boot/logutils.o: OPTIMIZATION := -O2
 
 #build/src/boot/z_std_dma.o: OPTIMIZATION := -O2 -g3
 #### Main Targets ###
