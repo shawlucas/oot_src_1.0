@@ -54,3 +54,10 @@ __osPiDevMgr = 0x80006370;
 __DriveRomHandle = 0x800088C0;
 __osPiTable = 0x8000638C;
 __osCurrentHandle = 0x80006390;
+
+// yaz0.c
+sYaz0MaxPtr = 0x8000889C;
+sYaz0CurDataEnd = 0x80008890;
+sYaz0CurSize = 0x80008898;
+sYaz0DataBuffer = 0x80008490;
+sYaz0CurRomStart = 0x80008894;
