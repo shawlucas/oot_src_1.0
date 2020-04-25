@@ -1,14 +1,3 @@
-.include "macro.inc"
-
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purposee registers
-
-.align 4
-
-.section .text
-
 glabel osDriveRomInit
 /* 011A0 80001600 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 011A4 80001604 AFBF001C */  sw      $ra, 0x001C($sp)

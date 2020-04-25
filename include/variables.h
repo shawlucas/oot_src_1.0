@@ -17,4 +17,7 @@ extern OSViMode osViModeMpalLan1;
 extern s32 osTvType;
 extern DmaEntry gDmaDataTable[0x5F6];
 extern OSThread* __osRunningThread;
+extern OSThread* __osRunQueue;
+extern OSPiHandle* __osPiTable;
+extern OSPiHandle* __osCurrentHandle[];
 #endif

@@ -61,7 +61,7 @@ SPEC := spec
 include baserom_files.mk
 
 SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers lib lib/libultra lib/libultra/src lib/libultra/src/io lib/libultra/src/os
-ASM_DIRS := asm asm/code data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/boot asm/libultra_boot asm/overlays asm/overlays/actors asm/pad
+ASM_DIRS := asm asm/code data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates lib/libultra/src/os asm/boot asm/libultra_boot asm/overlays asm/overlays/actors asm/pad
 
 #include overlays.mk
 #include overlays_asm.mk
@@ -71,7 +71,7 @@ ASM_DIRS := asm asm/code data data/overlays data/overlays/actors data/overlays/e
 
 # source code
 C_FILES       := $(foreach dir,$(SRC_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(wildcard $(dir)/*.c))
-S_FILES       := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s))
+S_FILES       := $(foreach dir,$(ASM_DIRS),$(wildcard $(dir)/*.s)) \
 #TEXTURE_FILES := $(foreach dir,$(TEXTURE_DIRS),$(wildcard $(dir)/*.xml))
 O_FILES       := $(foreach f,$(S_FILES:.s=.o),build/$f) \
                  $(foreach f,$(C_FILES:.c=.o),build/$f) \
@@ -101,15 +101,16 @@ O_FILES       := $(foreach f,$(S_FILES:.s=.o),build/$f) \
 $(shell mkdir -p build/baserom)
 $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(shell mkdir -p build/$(dir)))
 
-
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
-build/lib/libultra/src/io/%: OPTIMIZATION := -O1
+build/lib/libultra/src/io/epidma.o: OPTIMIZATION := -O1
+build/lib/libultra/src/io/driverominit.o: OPTIMIZATION := -O2
 build/lib/libultra/src/os/%: OPTIMIZATION := -O1
 build/src/code/fault.o: CFLAGS += -trapuv
 build/src/code/fault.o: OPTIMIZATION := -O2 -g3
 build/src/code/fault_drawer.o: CFLAGS += -trapuv
 build/src/code/fault_drawer.o: OPTIMIZATION := -O2 -g3
+
 #build/src/boot/z_std_dma.o: OPTIMIZATION := -O2 -g3
 #### Main Targets ###
 
@@ -145,6 +146,9 @@ build/baserom/%.o: baserom/%
 
 
 build/asm/%.o: asm/%.s
+	$(AS) $(ASFLAGS) $^ -o $@
+
+build/lib/libultra/src/os/%.o: lib/libultra/src/os/%.s
 	$(AS) $(ASFLAGS) $^ -o $@
 
 build/data/%.o: data/%.s
@@ -200,7 +204,7 @@ build/src/code/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(
 build/src/overlays/actors/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/effects/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/gamestates/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
-
+build/lib/libultra/src/io/driverominit.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 #build/assets/textures/%.o: assets/textures/%.zdata
 #	$(OBJCOPY) -I binary -O elf32-big $< $@
 

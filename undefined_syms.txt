@@ -51,3 +51,6 @@ __osIntOffTable = 0x80006710;
 __osIntTable = 0x80006730;
 __osRcpImTable = 0x80006780;
 __osPiDevMgr = 0x80006370;
+__DriveRomHandle = 0x800088C0;
+__osPiTable = 0x8000638C;
+__osCurrentHandle = 0x80006390;
