@@ -1,3 +1,14 @@
+.rdata
+
+glabel D_800065D4
+    .asciz "../z_std_dma.c"
+    .balign 4
+
+glabel D_800065E4
+    .asciz "dmamgr"
+    .balign 4
+
+.text
 glabel DmaMgr_Start
 /* 00A0C 80000E6C 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 00A10 80000E70 3C020000 */  lui     $v0, %hi(_dmadataSegmentRomStart)                ## $v0 = 00000000

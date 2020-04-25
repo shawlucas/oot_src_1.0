@@ -125,6 +125,8 @@ void DmaMgr_DmaCallback1(u32 ram, u32 rom, u32 size) {
 
 #pragma GLOBAL_ASM("asm/non_matchings/boot/z_std_dma/func_80000AF8.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/boot/z_std_dma/unuseddata.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/boot/z_std_dma/DmaMgr_ProcessMsg.s")
 
 void DmaMgr_ThreadEntry(void* arg0) {

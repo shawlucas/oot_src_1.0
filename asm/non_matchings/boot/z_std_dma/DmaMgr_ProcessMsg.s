@@ -1,3 +1,22 @@
+.rdata
+
+glabel D_80006594
+    .asciz "../z_std_dma.c"
+    .balign 4
+
+glabel D_800065A4
+    .asciz "../z_std_dma.c"
+    .balign 4
+
+glabel D_800065B4
+    .asciz "../z_std_dma.c"
+    .balign 4
+
+glabel D_800065C4
+    .asciz "../z_std_dma.c"
+    .balign 4
+
+.text
 glabel DmaMgr_ProcessMsg
 /* 006AC 80000B0C 27BDFFC0 */  addiu   $sp, $sp, 0xFFC0           ## $sp = FFFFFFC0
 /* 006B0 80000B10 3C068001 */  lui     $a2, 0x8001                ## $a2 = 80010000
