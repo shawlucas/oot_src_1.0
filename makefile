@@ -113,6 +113,7 @@ build/lib/libultra/src/io/epiwrite.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/epirawdma.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/viswapcontext.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/cartrominit.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/sirawwrite.o: OPTIMIZATION := -O2
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/%.o: OPTIMIZATION := -O1

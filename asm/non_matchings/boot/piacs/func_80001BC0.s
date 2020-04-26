@@ -16,7 +16,7 @@ glabel func_80001BC0
 /* 01798 80001BF8 27A40028 */  addiu   $a0, $sp, 0x0028           ## $a0 = FFFFFFC0
 /* 0179C 80001BFC 8FA60068 */  lw      $a2, 0x0068($sp)
 /* 017A0 80001C00 8FA7006C */  lw      $a3, 0x006C($sp)
-/* 017A4 80001C04 0C00169C */  jal     func_80005A70
+/* 017A4 80001C04 0C00169C */  jal     osSetTimer
 /* 017A8 80001C08 AFA0001C */  sw      $zero, 0x001C($sp)
 /* 017AC 80001C0C 27A40050 */  addiu   $a0, $sp, 0x0050           ## $a0 = FFFFFFE8
 /* 017B0 80001C10 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000

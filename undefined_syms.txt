@@ -117,3 +117,6 @@ __additional_scanline = 0x8000654C;
 // cartrominit.c
 CartRomHandle = 0x80009EA0;
 D_80006520 = 0x80006520;
+
+// sethwinterrupt.c
+__osHwIntTable = 0x80006300;

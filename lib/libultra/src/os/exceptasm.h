@@ -75,8 +75,14 @@
 #define OS_EVENTSTATE_MESSAGE_QUEUE 0
 #define OS_EVENTSTATE_MESSAGE 4
 
-#ifdef _LANGUAGE_C
-extern s32 (*__osHwIntTable[])(void); //maybe 6? or 9
-#endif 
+//extern s32 (*__osHwIntTable[])(void); //maybe 6? or 9
+
+typedef struct 
+{
+    OSMesgQueue* queue;
+    OSMesg msg;
+} __osHwInt;
+
+extern __osHwInt __osHwIntTable[];
 
 #endif
