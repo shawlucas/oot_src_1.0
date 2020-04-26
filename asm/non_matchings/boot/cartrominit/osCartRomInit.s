@@ -1,14 +1,3 @@
-.include "macro.inc"
-
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purposee registers
-
-.align 4
-
-.section .text
-
 glabel osCartRomInit
 /* 05220 80005680 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 05224 80005684 AFBF001C */  sw      $ra, 0x001C($sp)

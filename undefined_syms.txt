@@ -113,3 +113,7 @@ osViModePalLan1 = 0x800064D0;
 
 // viswapcontext.c
 __additional_scanline = 0x8000654C;
+
+// cartrominit.c
+CartRomHandle = 0x80009EA0;
+D_80006520 = 0x80006520;
