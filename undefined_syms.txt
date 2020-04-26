@@ -87,3 +87,8 @@ piStackThread = 0x80008A60;
 
 // pirawdma.c
 osRomBase = 0x80000308;
+
+// seteventmesg.c
+__osEventStateTab = 0x80009DE0;
+__osPreNMI = 0x800063A0;
+__osShutdown = 0x8000635C;

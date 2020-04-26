@@ -104,6 +104,7 @@ $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCEN
 build/lib/libultra/src/io/pimgr.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/devmgr.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/pirawdma.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/sirawread.o: OPTIMIZATION := -O2
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/%.o: OPTIMIZATION := -O1
@@ -212,7 +213,7 @@ build/lib/libultra/libc/src/ll.o: lib/libultra/libc/src/ll.c
 #build/lib/libultra/src/os/initialize.o: CC := $(CC_OLD)
 build/lib/libultra/src/io/%.o: CC := $(CC_OLD)
 build/lib/libultra/libc/%.o: CC := $(CC_OLD)
-
+build/lib/libultra/src/os/%.o: CC := $(CC_OLD)
 
 build/src/boot/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/code/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
@@ -221,7 +222,7 @@ build/src/overlays/effects/%.o: CC := python3 tools/asm_processor/build.py $(CC)
 build/src/overlays/gamestates/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/lib/libultra/src/io/%.o: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
 build/lib/libultra/libc/src/%.o: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
-build/lib/libultra/src/os/initialize.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+build/lib/libultra/src/os/%.o: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
 #build/assets/textures/%.o: assets/textures/%.zdata
 #	$(OBJCOPY) -I binary -O elf32-big $< $@
 

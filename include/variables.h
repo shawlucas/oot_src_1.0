@@ -36,4 +36,6 @@ extern OSMesg piEventBuf[1];
 extern OSMesgQueue __osPiAccessQueue;
 extern u8 piStackThread[0x1000];
 extern void* osRomBase;
+extern u32 __osPreNMI;
+extern u32 __osShutdown;
 #endif
