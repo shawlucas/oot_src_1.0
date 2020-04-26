@@ -4,6 +4,7 @@
 #include "z64.h"
 #include <segment_symbols.h>
 #include <../lib/libultra/src/io/viint.h>
+#include <../lib/libultra/src/os/exceptasm.h>
 
 extern u32 osMemSize;
 extern OSThread sIdleThread;
