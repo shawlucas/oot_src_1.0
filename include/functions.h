@@ -4,8 +4,6 @@
 #include <z64dma.h>
 #include <z64.h>
 
-typedef struct StackEntry;
-
 void Idle_ThreadEntry(void* a0);
 void Main_ThreadEntry(void* arg0);
 void DmaMgr_Start(void);
@@ -39,4 +37,5 @@ OSTime osGetTime();
 void __osSetTimerIntr(OSTime tim);
 void __osTimerInterrupt(void);
 void __osTimerServicesInit(void);
+u32 osGetCount(void);
 #endif

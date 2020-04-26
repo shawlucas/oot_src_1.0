@@ -42,4 +42,7 @@ extern OSThread* __osThreadTail[2];
 extern OSTime __osCurrentTime;
 extern u32 __osBaseCounter;
 extern u32 __osViIntrCount;
+extern OSViMode osViModeMpalLan1;
+extern OSViMode osViModePalLan1;
+extern OSViMode osViModeNtscLan1;
 #endif

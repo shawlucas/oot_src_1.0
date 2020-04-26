@@ -102,3 +102,11 @@ __osViIntrCount = 0x80009E8C;
 __osTimerList = 0x800063B0;
 __osBaseTimer = 0x80009E60;
 __osTimerCounter = 0x80009E90;
+
+// setglobalintmask.c
+__OSGlobalIntMask = 0x80006360;
+
+// vi.c
+__osViCurr = 0x800064C0;
+vi = 0x80006460;
+osViModePalLan1 = 0x800064D0;
