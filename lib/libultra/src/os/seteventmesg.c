@@ -1,8 +1,9 @@
 #include <libultra/ultra64.h>
-#include <global.h>
 #include "osint.h"
 
 extern __OSEventState __osEventStateTab[OS_NUM_EVENTS];
+extern u32 __osShutdown;
+extern u32 __osPreNMI;
 
 void osSetEventMesg(OSEvent event, OSMesgQueue* mq, OSMesg msg) {
     register u32 saveMask = __osDisableInt();

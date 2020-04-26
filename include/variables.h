@@ -38,7 +38,6 @@ extern u8 piStackThread[0x1000];
 extern void* osRomBase;
 extern u32 __osPreNMI;
 extern u32 __osShutdown;
-extern OSThread* __osThreadTail[2];
 extern OSTime __osCurrentTime;
 extern u32 __osBaseCounter;
 extern u32 __osViIntrCount;
@@ -46,4 +45,5 @@ extern OSViMode osViModeMpalLan1;
 extern OSViMode osViModePalLan1;
 extern OSViMode osViModeNtscLan1;
 extern u32 __additional_scanline;
+
 #endif
