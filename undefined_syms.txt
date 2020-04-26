@@ -96,3 +96,9 @@ __osShutdown = 0x8000635C;
 // gettime.c
 __osCurrentTime = 0x80009E80;
 __osBaseCounter = 0x80009E88;
+
+// timerintr.c
+__osViIntrCount = 0x80009E8C;
+__osTimerList = 0x800063B0;
+__osBaseTimer = 0x80009E60;
+__osTimerCounter = 0x80009E90;

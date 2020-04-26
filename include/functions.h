@@ -34,4 +34,9 @@ void __createSpeedParam(void);
 u32 __osGetCause(void);
 s32 osEPiRawStartDma(OSPiHandle *pihandle, s32 direction, u32 devAddr, void *dramAddr, u32 size);
 s32 osPiRawStartDma(s32 direction, u32 devAddr, void *dramAddr, u32 size);
+OSTime __osInsertTimer(OSTimer* t);
+OSTime osGetTime();
+void __osSetTimerIntr(OSTime tim);
+void __osTimerInterrupt(void);
+void __osTimerServicesInit(void);
 #endif

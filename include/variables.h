@@ -41,4 +41,5 @@ extern u32 __osShutdown;
 extern OSThread* __osThreadTail[2];
 extern OSTime __osCurrentTime;
 extern u32 __osBaseCounter;
+extern u32 __osViIntrCount;
 #endif

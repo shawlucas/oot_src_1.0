@@ -55,7 +55,7 @@ beginseg
      include "build/lib/libultra/src/io/epirawread.o"
      include "build/lib/libultra/src/io/epirawdma.o"
      include "build/lib/libultra/src/os/gettime.o"
-     include "build/asm/libultra_boot/timerintr.o"
+     include "build/lib/libultra/src/os/timerintr.o"
      include "build/asm/osGetCount.o"
      include "build/asm/libultra_boot/__osSetGlobalIntMask.o"
      include "build/asm/__osSetCompare.o"

@@ -101,6 +101,7 @@ O_FILES       := $(foreach f,$(S_FILES:.s=.o),build/$f) \
 $(shell mkdir -p build/baserom)
 $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(shell mkdir -p build/$(dir)))
 
+build/lib/libultra/src/os/timerintr.o: OPTIMIZATION := -O1
 build/lib/libultra/src/io/pimgr.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/devmgr.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/pirawdma.o: OPTIMIZATION := -O2
