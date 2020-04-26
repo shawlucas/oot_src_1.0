@@ -110,3 +110,6 @@ __OSGlobalIntMask = 0x80006360;
 __osViCurr = 0x800064C0;
 vi = 0x80006460;
 osViModePalLan1 = 0x800064D0;
+
+// viswapcontext.c
+__additional_scanline = 0x8000654C;

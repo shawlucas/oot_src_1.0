@@ -108,6 +108,7 @@ build/lib/libultra/src/io/pirawdma.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/sirawread.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/epirawread.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/epirawdma.o: OPTIMIZATION := -O2
+build/lib/libultra/src/io/viswapcontext.o: OPTIMIZATION := -O2
 build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
 build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
 build/lib/libultra/src/io/%.o: OPTIMIZATION := -O1

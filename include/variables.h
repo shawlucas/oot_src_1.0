@@ -45,4 +45,5 @@ extern u32 __osViIntrCount;
 extern OSViMode osViModeMpalLan1;
 extern OSViMode osViModePalLan1;
 extern OSViMode osViModeNtscLan1;
+extern u32 __additional_scanline;
 #endif

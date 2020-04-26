@@ -63,7 +63,7 @@ beginseg
      include "build/lib/libultra/src/os/resetglobalintmask.o"
      include "build/lib/libultra/src/os/interrupt.o"
      include "build/lib/libultra/src/io/vi.o"
-     include "build/asm/libultra_boot/__osViSwapContext.o"
+     include "build/lib/libultra/src/io/viswapcontext.o"
      include "build/asm/libultra_boot/osPiGetCmdQueue.o"
      include "build/asm/libultra_boot/osEPiReadIo.o"
      include "build/asm/libultra_boot/osCartRomInit.o"
