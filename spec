@@ -34,7 +34,7 @@ beginseg
      include "build/data/exceptasm.rodata.o"
      include "build/lib/libultra/src/io/devmgr.o"
      include "build/lib/libultra/src/io/pirawdma.o"
-     include "build/asm/libultra_boot/osVirtualToPhysical.o"
+     include "build/lib/libultra/src/os/virtualtophysical.o"
      include "build/asm/libultra_boot/osViBlack.o"
      include "build/asm/libultra_boot/__osSiRawReadIo.o"
      include "build/asm/libultra_boot/osGetThreadId.o"
