@@ -38,4 +38,7 @@ extern u8 piStackThread[0x1000];
 extern void* osRomBase;
 extern u32 __osPreNMI;
 extern u32 __osShutdown;
+extern OSThread* __osThreadTail[2];
+extern OSTime __osCurrentTime;
+extern u32 __osBaseCounter;
 #endif

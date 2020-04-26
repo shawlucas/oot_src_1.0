@@ -92,3 +92,7 @@ osRomBase = 0x80000308;
 __osEventStateTab = 0x80009DE0;
 __osPreNMI = 0x800063A0;
 __osShutdown = 0x8000635C;
+
+// gettime.c
+__osCurrentTime = 0x80009E80;
+__osBaseCounter = 0x80009E88;

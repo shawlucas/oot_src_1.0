@@ -1,14 +1,3 @@
-.include "macro.inc"
-
-# assembler directives
-.set noat      # allow manual use of $at
-.set noreorder # don't insert nops after branches
-.set gp=64     # allow use of 64-bit general purposee registers
-
-.align 4
-
-.section .text
-
 glabel osEPiRawStartDma
 /* 04280 800046E0 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 04284 800046E4 3C03A460 */  lui     $v1, 0xA460                ## $v1 = A4600000
